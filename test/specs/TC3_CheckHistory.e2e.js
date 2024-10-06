@@ -1,9 +1,9 @@
 const HistoryPage = require('../pageobjects/HistoryPage');
 const MainPage = require('../pageobjects/MainPage');
 
-describe('Track history test', () => {
+describe('TC3 - Track history test', () => {
     it('should open article and check that it is added to history', async () => {
-        await browser.pause(3000); // Ожидание загрузки приложения
+        await browser.pause(3000); // Waiting for the app to load
         const articleTitle = await MainPage.getTextFeaturedArticleTitle();
         await MainPage.clickArticleButton();
         await MainPage.clickCloseArticleButton();

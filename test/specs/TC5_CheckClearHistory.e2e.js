@@ -1,10 +1,9 @@
 const HistoryPage = require('../pageobjects/HistoryPage');
 const MainPage = require('../pageobjects/MainPage');
 
-describe('Track history test', () => {
-    it('should open article and check that it is added to history', async () => {
-        await browser.pause(3000); // Ожидание загрузки приложения
-        const articleTitle = await MainPage.getTextFeaturedArticleTitle();
+describe('TC5 - Clear history test', () => {
+    it('should clear history and check that it is empty', async () => {
+        await browser.pause(3000); // Waiting for the app to load
         await MainPage.clickArticleButton();
         await MainPage.clickCloseArticleButton();
         await MainPage.clickHistoryButton();

@@ -1,27 +1,68 @@
-# Repo with test task for browserstack
+# Android App Testing with WebdriverIO and BrowserStack
 
-## Task
-1.  Clone repo and install all dependencies.
-2.  Upload app Android-NativeDemoApp to browserstack using API ([Link](https://www.browserstack.com/docs/app-automate/api-reference/appium/apps#upload-an-app)) and add unique ID to the ```wdio.conf.js```.
-3.  Create test 5 test cases (locators can be found using [Appium Inspector](https://github.com/appium/appium-inspector/releases) that conected to the Browserstack account).
-4.  Create workflow with using secrets (for user and key in capabilities)([description of secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)).
-5.  Create 2 config files (with different devices)
+## Project Overview
 
-## Tips
-1.  You can create multiple accounts in browserstack (demo trial - 100 minutes).
-2.  First of all find all necessary locators.
-3.  In the Appium Inspector at the header choose ```Select Cloud Providers -> Browserstack``` and into ```JSON Representation``` insert the next:
+This project focuses on testing an Android app using WebdriverIO in conjunction with BrowserStack. The main objective is to automate Android app testing and run the tests on real devices in the cloud via BrowserStack.
+
+### Tested Scenarios:
+
+- Opening the application.
+- Scrolling to the desired element.
+- Clicking on various UI elements (buttons, images).
+- Verifying the presence and correctness of text in specific elements.
+
+## Setup
+
+To run the tests, you need to install the dependencies:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-repo-link.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd your-project-directory
+   ```
+
+3. Install all required dependencies:
+   ```bash
+   npm install
+   ```
+
+## How to Run Tests
+
+### Locally
+
+To run the tests locally, use the following command:
+
+```bash
+npm run test:browserstack
 ```
-{
-  "appium:protocol": "https",
-  "appium:hostname": "hub.browserstack.com",
-  "appium:path": "/wd/hub",
-  "appium:maxInstances": 1,
-  "appium:app": "Your App ID is here",
-  "appium:os_version": "9.0",
-  "appium:deviceName": "Google Pixel 3",
-  "platformName": "Android",
-  "appium:autoAcceptAlerts": "true",
-  "appium:browserstack.appium_version": "1.22.0"
-}
+
+### On BrowserStack
+
+To run the tests on BrowserStack, make sure your BrowserStack credentials are correctly set in environment variables or in your `wdio.conf.js` file:
+
+```bash
+export BROWSERSTACK_USERNAME='your_browserstack_username'
+export BROWSERSTACK_ACCESS_KEY='your_browserstack_access_key'
 ```
+
+Then, run the tests using the following npm script:
+
+```bash
+npm run test:browserstack
+```
+
+## Project Structure
+
+- `test/`: Contains test files.
+- `pageobjects/`: Contains Page Object classes to encapsulate UI element locators and actions.
+- `wdio.conf.js`: WebdriverIO configuration file, specifying BrowserStack integration, desired capabilities, and test setup.
+
+## Contact
+
+If you have any questions or need further assistance, feel free to reach out to the project maintainer.
