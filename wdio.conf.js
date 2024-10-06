@@ -1,6 +1,6 @@
 exports.config = {
-  user: process.env.BROWSERSTACK_USERNAME,
-  key: process.env.BROWSERSTACK_ACCESS_KEY,
+  user: process.env.BROWSERSTACK_USERNAME || 'brgdpfv_fzG6at',
+  key: process.env.BROWSERSTACK_ACCESS_KEY || 'etiy3BDUxPbxqLzKWm6a',
   hostname: 'hub.browserstack.com',
 
   updateJob: false,

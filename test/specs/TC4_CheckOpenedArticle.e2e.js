@@ -5,9 +5,10 @@ const TabsPage = require('../pageobjects/TabsPage');
 describe('Tabs test', () => {
     it('should open article and check that it is added to tabs', async () => {
         await browser.pause(3000); // Ожидание загрузки приложения
+        const articleTitle = await MainPage.getTextFeaturedArticleTitle();
         await MainPage.clickArticleButton();
-        await MainPage.clickCloseArticleButton();
+        await MainPage.tabsButton.waitForDisplayed({ timeout: 5000 });
         await MainPage.clickTabsButton();
-        await TabsPage.verifyFirstElementTitle("Secretum (British Museum)"); 
+        await TabsPage.verifyFirstElementTitle(articleTitle);
     });
 });

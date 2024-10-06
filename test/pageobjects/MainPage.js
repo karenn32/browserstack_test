@@ -13,8 +13,12 @@ class MainPage {
         return $(`//android.widget.ImageView[@resource-id="org.wikipedia.alpha:id/view_featured_article_card_image"]`);
     }
 
+    get featuredArticleTitle() {
+        return $(`//android.widget.TextView[@resource-id="org.wikipedia.alpha:id/view_featured_article_card_article_title"]`);
+    }
+
     get closeArticleButton() {
-        return $(`//android.widget.ImageButton[@content-desc="Navigate up"]`);
+        return $(`//android.widget.TextView[@resource-id="org.wikipedia.alpha:id/view_wiki_error_button"]`);
     }
 
     get historyButton() {
@@ -60,6 +64,10 @@ class MainPage {
 
     async clickHistoryButton() {
         await this.historyButton.click();
+    }
+
+    async getTextFeaturedArticleTitle() {
+        return await this.featuredArticleTitle.getText();
     }
 
     async clickOkButton() {

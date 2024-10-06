@@ -1,7 +1,7 @@
 class FavouritePage {
     // locator for element with text "My reading list"
     get firstElementTitle() {
-        return $('(//android.widget.TextView[@resource-id="org.wikipedia.alpha:id/tab_item_title"]');
+        return $('//android.widget.TextView[@resource-id="org.wikipedia.alpha:id/tab_item_title"]');
     }
 
     // Checking text of the title
