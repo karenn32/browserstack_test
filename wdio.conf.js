@@ -13,8 +13,8 @@ exports.config = {
     project: "First Webdriverio Android Project",
     build: 'Webdriverio Android',
     name: 'first_test',
-    device: 'Google Pixel 3',
-    os_version: "9.0",
+    device: 'Google Pixel 5',
+    os_version: "13.0",
     app: process.env.BROWSERSTACK_APP_ID || 'bs://sample.app',
     'browserstack.debug': true
   }],
