@@ -14,7 +14,7 @@ exports.config = {
     build: 'Webdriverio Android',
     name: 'first_test',
     device: 'Google Pixel 5',
-    os_version: "13.0",
+    os_version: "12.0",
     app: process.env.BROWSERSTACK_APP_ID || 'bs://sample.app',
     'browserstack.debug': true
   }],
